@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* popup */
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+
+/* logo */
+/* Animasi saat logo muncul */
+@keyframes logoFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-logo-fade-in {
+  animation: logoFadeInUp 0.8s ease-out forwards;
+}
+
+
+/* STATAUS */
+@keyframes pingSlow {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+}
+.animate-ping-slow {
+    animation: pingSlow 2s infinite;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* LOGIN MENU */
+/* Floating label animation */
+.input-group {
+  position: relative;
+}
+
+.input-label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.2s ease all;
+  pointer-events: none;
+  color: #6b7280;
+}
+
+input:focus ~ .input-label,
+input:not(:placeholder-shown) ~ .input-label {
+  top: 0.4rem;
+  left: 0.8rem;
+  font-size: 0.75rem;
+  color: #4f46e5;
+  background-color: white;
+  padding: 0 0.25rem;
+}
+
+
+/* TOMBOL */
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 0 0px rgba(99, 102, 241, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(99, 102, 241, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 0px rgba(99, 102, 241, 0.5);
+    }
+}
+
+.animate-glow {
+    animation: glowPulse 2.5s ease-in-out infinite;
+}
